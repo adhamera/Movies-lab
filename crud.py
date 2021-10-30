@@ -48,7 +48,11 @@ def get_users():
 
     return User.query.all()
 
+def get_user_by_email(email):
 
+    return User.query.filter_by(email = email).first()
+
+    
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
